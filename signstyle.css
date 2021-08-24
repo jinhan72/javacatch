@@ -1,0 +1,133 @@
+/*기본 설정 */
+* {
+	margin: 0px;
+	padding: 0px;
+	text-decoration: none;
+	font-family: sans-serif;
+}
+body {
+	height: 150vh;
+	background-image: url('image/main.jpg');
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+/*요소들을 중간으로 정렬*/
+.joinForm {
+	position: absolute;
+	width: 400px;
+	height: 1000px;
+	padding: 30px, 20px;
+	background-color: #FFFFFF;
+	text-align: center;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	border-radius: 30px;
+}
+/*text칸을 변형 */
+.textForm {
+	border-bottom: 2px solid #adadad;
+	margin: 30px;
+	padding: 10px 10px;
+}
+/* 여기서다 똑같음 text칸을 없애는 작업*/
+.id {
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
+}
+
+.pw {
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
+}
+
+.kname {
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
+}
+
+.ename {
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
+}
+.birth{
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
+}
+.check{
+	margin:10px;
+}
+.address{
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
+}
+.phone{
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
+}
+.email{
+	width: 100%;
+	border: none;
+	outline: none;
+	color: #636e72;
+	font-size: 16px;
+	height: 25px;
+	background: none;
+}
+/* 버튼을 알록달록하게 해주는 스타일 */
+.btn {
+	position: relative;
+	left: 40%;
+	transform: translateX(-50%);
+	margin-bottom: 40px;
+	width: 80%;
+	height: 40px;
+	background: linear-gradient(125deg, #81ecec, #6c5ce7, #81ecec);
+	background-position: left;
+	background-size: 200%;
+	color: white;
+	font-weight: bold;
+	border: none;
+	cursor: pointer;
+	transition: 0.4s;
+	display: inline;
+}
+/* 버튼을 반짝이게 해주는 스타일 */
+.btn:hover {
+	background-position: right;
+}

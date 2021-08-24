@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입</title>
+<link rel="icon" href="image/airplane.ico">
+<link rel="stylesheet" type="text/css" href="signstyle.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<script>
+	function Click(){
+
+		  if($("input:radio[name='checking']").is(":checked")==true){ // if 시작
+		  
+		      var ch_n = $(":input:radio[name=checking]:checked").val();
+		      if(ch_n=='no'){
+		        alert('개인정보 수집 및 이용 미동의 시 참여 불가!');
+		        return false;
+		      }
+		    
+		  }else{ //else 시작
+		  
+		      alert('개인정보 수집 및 이용 동의 시 참여 가능!);
+		      return false;
+		    
+		  }
+
+		}
+    
+ 	</script>
+
+</head>
+<body>
+	<div class="wrap">
+		<form method="POST" class="joinForm">
+			<h1>회원가입</h1>
+			<br>
+			<h2>정보입력</h2>
+			<div class="textForm">
+				<!--아이디 칸-->
+				<input name="signId" type="text" class="id" placeholder="아이디">
+			</div>
+			<!--비밀번호 칸-->
+			<div class="textForm">
+				<input name="signPw" type="password" class="pw" placeholder="비밀번호">
+			</div>
+			<!-- 비밀번호 확인 -->
+			<div class="textForm">
+				<input name="signPw1" type="password" class="pw"
+					placeholder="비밀번호 확인">
+			</div>
+			<!-- 이름 -->
+			<div class="textForm">
+				<input name="kname" type="text" class="kname" placeholder="이름">
+			</div>
+			<!-- 영어이름 -->
+			<div class="textForm">
+				<input name="ename" type="text" placeholder="이름(FIRST NAME)"
+					class="ename">
+			</div>
+			<!-- 생일 -->
+			<div class="textForm">
+				<input name="birth" type="text" placeholder="YYYYMMDD (예.19991009)"
+					class="birth">
+			</div>
+			<!-- 성별 -->
+			<div>
+				<span> <input name="scheck" type="radio" id="male1" value="M"
+					checked="checked"> <label for="male1"> 남자 </label>
+				</span> <span> <input name="scheck" type="radio" id="female1"
+					value="F"> <label for="female1"> 여자</label>
+				</span>
+			</div>
+			<!-- 인종 -->
+			<div class="check1">
+				<span><input name="fcheck" type="radio" class="local"
+					checked="checked"> <label for="male1"> 내국인 </label></span> <span><input
+					name="fcheck" type="radio" class="foreigner" name="hcheck"
+					value="F"> <label for="foreigner"> 외국인</label></span>
+			</div>
+			<!-- 주소 -->
+			<div class="textForm">
+				<input type="text" name="adr1" class="address" title="주소"
+					placeholder="주소 및 상세 주소">
+			</div>
+			<!-- 연락처 -->
+			<div class="textForm">
+				<input type="text" class="phone" placeholder="휴대전화번호">
+			</div>
+			<!-- 이메일 -->
+			<div class="textForm">
+				<input type="text" class="email" placeholder="예) abc@gmail.com"
+					title="이메일">
+
+			</div>
+			<!-- 개인정보 처리방침 -->
+			<div class="check2">
+				<textarea name="minfocheck" class="ch" readonly>개인정보 수집 및 이용에 동의합니다.등등</textarea>
+				<br> <input name="checking" type="radio" class="ch_y" value="yes" required
+					> <label for="checking">동의</label> <input
+					name="checking" type="radio" class="ch_n" value="no"> <label
+					for="checking">비동의</label>
+			</div>
+			<!-- 가입 완료버튼 -->
+			<a href="index.html" target="_self"><input type="submit"
+				class="btn" value="가입 하기"></a>
+		</form>
+	</div>
+
+ 	
+</body>
+</html>
