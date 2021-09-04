@@ -1,0 +1,201 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+<head>
+<title>Generic - Phantom by HTML5 UP</title>
+<meta charset="utf-8" />
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, user-scalable=no" />
+<link rel="stylesheet" href="assets/css/main.css" />
+<noscript>
+	<link rel="stylesheet" href="assets/css/noscript.css" />
+</noscript>
+<script type="text/javascript"
+	src="//dapi.kakao.com/v2/maps/sdk.js?appkey=fedc99aa8be98b8883a476c106eb4d80"></script>
+
+<style type="text/css">
+#map {
+	border: 2px solid blue;
+	width: 500px;
+	height: 300px;
+}
+
+.map_wrap {
+	position: relative;
+	overflow: hidden;
+	width: 100%;
+	height: 350px;
+}
+
+.radius_border {
+	border: 1px solid #919191;
+	border-radius: 5px;
+}
+</style>
+</head>
+<body class="is-preload">
+	<!-- Wrapper -->
+	<div id="wrapper">
+
+		<!-- Header -->
+		<header id="header">
+			<div class="inner">
+
+				<!-- Logo -->
+				<a href="index.html" class="logo"> <span class="symbol"><img
+						src="images/logo.svg" alt="" /></span><span class="title">Phantom</span>
+				</a>
+
+				<!-- Nav -->
+				<nav>
+					<ul>
+						<li><a href="#menu">Menu</a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</header>
+
+		<!-- Menu -->
+		<nav id="menu">
+			<h2>Menu</h2>
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="generic.html">Ipsum veroeros</a></li>
+				<li><a href="generic.html">Tempus etiam</a></li>
+				<li><a href="generic.html">Consequat dolor</a></li>
+				<li><a href="elements.html">Elements</a></li>
+			</ul>
+		</nav>
+
+		<!-- Main -->
+		<div id="main">
+			<div class="inner">
+				<h1>Generic Page</h1>
+				<div id="map" class="image main"></div>
+				<!-- 지도타입 컨트롤 div 스카이뷰,지도볼 수 있음 -->
+				<div class="custom_typecontrol radius_borde">
+					<button id="btnRoadmap" class="selected_btn"
+						onclick="setMapType('roadmap')">지도</button>
+					<button id="btnSkyview" class="btn" onclick="setMapType('skyview')">스카이뷰</button>
+				</div>
+
+				<script type="text/javascript">
+					var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+					mapOption = {
+						center : new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
+						level : 3
+					// 지도의 확대 레벨
+					};
+
+					var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+					// 지도타입 컨트롤의 지도 또는 스카이뷰 버튼을 클릭하면 호출되어 지도타입을 바꾸는 함수입니다
+					function setMapType(maptype) {
+						var roadmapControl = document
+								.getElementById('btnRoadmap');
+						var skyviewControl = document
+								.getElementById('btnSkyview');
+						if (maptype === 'roadmap') {
+							map.setMapTypeId(kakao.maps.MapTypeId.ROADMAP);
+							roadmapControl.className = 'selected_btn';
+							skyviewControl.className = 'btn';
+						} else {
+							map.setMapTypeId(kakao.maps.MapTypeId.HYBRID);
+							skyviewControl.className = 'selected_btn';
+							roadmapControl.className = 'btn';
+						}
+					}
+				</script>
+				<p>Donec eget ex magna. Interdum et malesuada fames ac ante
+					ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet
+					dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim
+					auctor sit amet. Pellentesque leo mauris, consectetur id ipsum sit
+					amet, fergiat. Pellentesque in mi eu massa lacinia malesuada et a
+					elit. Donec urna ex, lacinia in purus ac, pretium pulvinar mauris.
+					Curabitur sapien risus, commodo eget turpis at, elementum convallis
+					elit. Pellentesque enim turpis, hendrerit tristique.</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis
+					dapibus rutrum facilisis. Class aptent taciti sociosqu ad litora
+					torquent per conubia nostra, per inceptos himenaeos. Etiam
+					tristique libero eu nibh porttitor fermentum. Nullam venenatis erat
+					id vehicula viverra. Nunc ultrices eros ut ultricies condimentum.
+					Mauris risus lacus, blandit sit amet venenatis non, bibendum vitae
+					dolor. Nunc lorem mauris, fringilla in aliquam at, euismod in
+					lectus. Pellentesque habitant morbi tristique senectus et netus et
+					malesuada fames ac turpis egestas. In non lorem sit amet elit
+					placerat maximus. Pellentesque aliquam maximus risus, vel venenatis
+					mauris vehicula hendrerit.</p>
+				<p>Interdum et malesuada fames ac ante ipsum primis in faucibus.
+					Pellentesque venenatis dolor imperdiet dolor mattis sagittis.
+					Praesent rutrum sem diam, vitae egestas enim auctor sit amet.
+					Pellentesque leo mauris, consectetur id ipsum sit amet, fersapien
+					risus, commodo eget turpis at, elementum convallis elit.
+					Pellentesque enim turpis, hendrerit tristique lorem ipsum dolor.</p>
+			</div>
+		</div>
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<section>
+					<h2>Get in touch</h2>
+					<form method="post" action="#">
+						<div class="fields">
+							<div class="field half">
+								<input type="text" name="name" id="name" placeholder="Name" />
+							</div>
+							<div class="field half">
+								<input type="email" name="email" id="email" placeholder="Email" />
+							</div>
+							<div class="field">
+								<textarea name="message" id="message" placeholder="Message"></textarea>
+							</div>
+						</div>
+						<ul class="actions">
+							<li><input type="submit" value="Send" class="primary" /></li>
+						</ul>
+					</form>
+				</section>
+				<section>
+					<h2>Follow</h2>
+					<ul class="icons">
+						<li><a href="#" class="icon brands style2 fa-twitter"><span
+								class="label">Twitter</span></a></li>
+						<li><a href="#" class="icon brands style2 fa-facebook-f"><span
+								class="label">Facebook</span></a></li>
+						<li><a href="#" class="icon brands style2 fa-instagram"><span
+								class="label">Instagram</span></a></li>
+						<li><a href="#" class="icon brands style2 fa-dribbble"><span
+								class="label">Dribbble</span></a></li>
+						<li><a href="#" class="icon brands style2 fa-github"><span
+								class="label">GitHub</span></a></li>
+						<li><a href="#" class="icon brands style2 fa-500px"><span
+								class="label">500px</span></a></li>
+						<li><a href="#" class="icon solid style2 fa-phone"><span
+								class="label">Phone</span></a></li>
+						<li><a href="#" class="icon solid style2 fa-envelope"><span
+								class="label">Email</span></a></li>
+					</ul>
+				</section>
+				<ul class="copyright">
+					<li>&copy; Untitled. All rights reserved</li>
+					<li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+				</ul>
+			</div>
+		</footer>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+</body>
+</html>
