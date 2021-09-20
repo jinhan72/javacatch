@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>회원가입 페이지</title>
+<style type="text/css">
+	.bg{
+		background-color: lightblue;
+	}
+</style>
+</head>
+<body>
+
+<form method="post" action="control.jsp">
+<input type="hidden" name="action" value="newUser">
+<table border="1">
+	<tr>
+		<td class="bg">아이디</td>
+		<td><input type="text" name="uid" required></td>
+	</tr>
+	<tr>
+		<td class="bg">비밀번호</td>
+		<td><input type="password" name="passwd" required></td>
+	</tr>
+	<tr>
+		<td class="bg">이름</td>
+		<td><input type="text" name="name" required></td>
+	</tr>
+	<tr>
+		<td colspan="2" align="right"><input type="submit" value="회원가입"></td>
+	</tr>
+</table>
+</form>
+
+</body>
+</html>
