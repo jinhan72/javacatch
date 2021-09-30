@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+<!-- 	<bean class="test.Test" id="test" init-method="initFunc"/>  -->
+	<bean class="test.GaPhone" id="phone">
+		<constructor-arg ref="sw"></constructor-arg>
+	</bean>
+	<bean class="test.SmartWatch" id="sw"/>
+	
+	<!-- 객체를 관리하고 생산하는 IoC 지원 스프링 컨테이너의 설정파일(xml) -->
+	<!-- beans라는 루트 엘리먼트를 가지고 있음 -->
+	<!-- 엘리먼트, 요소, 속성(class, id) -->
+	<!-- bean 기본 생성자만 인식함 -->
+	<!-- init-method 초기화 관련 메서드 /객체가 생성된 다음에부름 -->
+	<!-- destory-method 삭제나 클로즈 관련 메서드/객체가 삭제될때 부름  -->
+	<!-- lazy-init="true" 특정 객체를 부르는 메서드 반드시 만드는것이 아니고, 호출시에 만듬 -->
+	<!-- scope = "singleton" scope는 기본으로 싱글턴임! 하나의 객체를 전체가 공유-->
+	<!-- scope="prototype" 매번 부를때 마다 객체 생성 -->
+	<!-- construtor-arg 생성자에게 인자를 넣어줄 수 있음 객체 ref, 변수value -->
+	
+	<bean class = "test.Lgtv" id = "lg"/>
+	<bean class="test.Samsungtv" id="sam">
+		<constructor-arg ref="ps"></constructor-arg>
+	</bean>
+	
+	<bean class="test.PlayStation5" id="ps"/>
+		
+		
+		
+		
+		
+</beans>
