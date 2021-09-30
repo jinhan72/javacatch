@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+<!-- 	<bean class="test.Test" id="test" init-method="initFunc"/>  -->
+<!-- 	<bean class="test.GaPhone" id="phone">
+		<constructor-arg ref="sw"></constructor-arg>
+	</bean>  -->
+	
+	<!-- 	<bean class="test2.CBean" id="cb">
+			<property name="list">
+				<list>
+					<value>apple</value>
+					<value>바나나</value>
+					<value>원숭이엉덩이는빠지?</value>
+				</list>
+			</property>
+		</bean> -->
+		
+		
+		
+		<!-- <bean class="test2.CBean" id="cb">
+		<property name="map">
+			<map>
+				<entry>
+					<key><value>애플</value></key>
+					<value>사과</value>
+				</entry>
+				<entry>
+					<key><value>보내나</value></key>
+					<value>바나나</value>
+				</entry>
+				<entry>
+					<key><value>무와섬</value></key>
+					<value>물</value>
+				</entry>
+			</map>
+		</property>
+		</bean> -->	
+		
+	
+	 	<bean class="test.IPhone" id="phone">
+			<property name="aw" ref="aw"></property>
+			<property name="num" value="1234"></property>
+		</bean>  
+		
+		<bean class="test.AppleWatch" id="aw"/>
+	
+	<bean class="test2.KakaoT" id="kt">
+		<property name="list">
+			<list>
+				<value>김진한</value>
+				<value>김진한</value>
+				<value>김진한</value>
+				<value>김진한</value>
+				<value>김진한</value>
+				<value>김진한</value>
+			</list>
+		</property>
+	</bean>
+	
+	
+	
+	<!-- 객체를 관리하고 생산하는 IoC 지원 스프링 컨테이너의 설정파일(xml) -->
+	<!-- beans라는 루트 엘리먼트를 가지고 있음 -->
+	<!-- 엘리먼트, 요소, 속성(class, id) -->
+	<!-- bean 기본 생성자만 인식함 -->
+	<!-- init-method 초기화 관련 메서드 /객체가 생성된 다음에부름 -->
+	<!-- destory-method 삭제나 클로즈 관련 메서드/객체가 삭제될때 부름  -->
+	<!-- lazy-init="true" 특정 객체를 부르는 메서드 반드시 만드는것이 아니고, 호출시에 만듬 -->
+	<!-- scope = "singleton" scope는 기본으로 싱글턴임! 하나의 객체를 전체가 공유-->
+	<!-- scope="prototype" 매번 부를때 마다 객체 생성 -->
+	<!-- construtor-arg 생성자에게 인자를 넣어줄 수 있음 객체 ref, 변수value -->
+	<!-- setter인젝션을 사용할때에는 property로 사용 / bean이 실행되고 실행함-->
+	
+	
+	<!-- namespaces에서 p 추가  -->
+	<!-- p는 값을 넣어줄때 p: xxx-ref="", p:변수명="" -->
+
+	
+	
+	
+<!-- 	<bean class = "test.Lgtv" id = "lg"/>
+	<bean class="test.Samsungtv" id="sam">
+		<constructor-arg ref="ps"></constructor-arg>
+	</bean>
+	
+	<bean class="test.PlayStation5" id="ps"/> -->
+		
+		
+		
+		
+		
+</beans>
