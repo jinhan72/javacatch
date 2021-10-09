@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+
+	<context:component-scan base-package="model"></context:component-scan>
+	<context:component-scan base-package="com.kim.app"></context:component-scan>
+	
+	<!-- <bean class="com.kim.app.common.LogAdvice" id="log" />
+	<bean class="com.kim.app.common.AfterAdvice" id="aAdvice" />
+	<bean class="com.kim.app.common.AfterReturningAdvice" id="arAdvice" />
+	<bean class="com.kim.app.common.AfterThrowingAdvice" id="atAdvice" />
+	<bean class="com.kim.app.common.AroundAdvice" id="aroundAdvice" /> -->
+	
+	<aop:aspectj-autoproxy></aop:aspectj-autoproxy>
+	
+
+	<!-- <aop:config>
+		<aop:pointcut expression="execution(* model.board.*Impl.get*(..))" id="aPointcut"/>
+		<aop:pointcut expression="execution(* model.board.*Impl.*(..))" id="bPointcut"/>
+		<aop:pointcut expression="execution(* model.member.*Impl.get*(..))" id="cPointcut"/>
+		
+		<aop:aspect ref="arAdvice">
+			<aop:after-returning method="printLog" pointcut-ref="cPointcut" returning="obj"/>
+		</aop:aspect>
+		<aop:aspect ref="aAdvice">
+			<aop:after method="printLog" pointcut-ref="cPointcut"/>
+		</aop:aspect>
+		
+		<aop:aspect ref="atAdvice">
+			<aop:after-throwing method="printLog" pointcut-ref="bPointcut" throwing="excep"/>
+		</aop:aspect>
+		<aop:aspect ref="aroundAdvice">
+			<aop:around method="printLog" pointcut-ref="bPointcut"/>
+		</aop:aspect>
+	</aop:config> -->
+	
+</beans>
