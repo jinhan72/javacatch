@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="newsdao">
+
+<!-- SQL문 실행결과와 자바객체(VO)를 연결해주는 매퍼(Mapper) 
+<resultMap type="news" id="newsResult">
+	<result property="title" column="TITLE"/>
+</resultMap>
+ -->
+<insert id="insertNews" >
+INSERT INTO NEWS(NPK,TITLE,WRITER,CONTENT,NTYPE) VALUES((SELECT NVL(MAX(NPK),0)+1 FROM NEWS),#{title},#{writer},#{content},#{ntype})
+</insert>
+
+<update id="updateNews">
+UPDATE NEWS SET WRITER=#{WRITER},TITLE=#{title},CONTENT=#{content},NTYPE=#{ntype} WHERE NPK=#{npk}
+</update>
+
+
+<delete id="deleteNews">
+DELETE NEWS WHERE NPK=#{npk}
+</delete>
+
+<select id="getNews" resultType="news">
+SELECT * FROM NEWS WHERE NPK=#{npk}
+</select>
+
+<select id="getNewsList" resultType="news">
+SELECT * FROM NEWS WHERE TITLE LIKE '%'||#{keyword}||'%' ORDER BY NPK DESC</select>
+
+</mapper>
+

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<!-- jdbc와의 커넥션을 확보하기위한 설정 -->
+	<properties resource="db.properties"/>
+	
+	<!-- 별칭(별명) 설정 -->
+	<typeAliases>
+		<typeAlias alias="news" type="model.news.NewsVO"/>
+	</typeAliases>
+	
+	<!-- DataSource 설정-->
+	<environments default="development">
+		<environment id="development">
+			<transactionManager type="JDBC"/>
+			<dataSource type="POOLED">
+				<property name="driver" value="${jdbc.driverClassName}"/>
+				<property name="url" value="${jdbc.url}"/>
+				<property name="username" value="${jdbc.username}"/>
+				<property name="password" value="${jdbc.password}"/>
+			</dataSource>
+		</environment>
+	</environments>
+	
+	<!-- mappings 패키지안의 메서드(==설정파일)와 연결 -->
+	<mappers>
+		<mapper resource="mapping/news-mapping.xml"/>
+	</mappers>
+	
+</configuration>
